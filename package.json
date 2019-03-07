@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/garoon/garoon-dts/issues"
   },
-  "homepage": "https://github.com/garoon/garoon-dts#readme"
+  "homepage": "https://github.com/garoon/garoon-dts#readme",
+  "devDependencies": {
+    "prettier": "^1.16.4"
+  }
 }
