@@ -72,7 +72,7 @@ declare namespace garoon {
     }
 
     namespace schedule {
-        namespace evnet {
+        namespace event {
             function get(): garoon.types.schedule.Event;
             function set(
                 event: garoon.types.schedule.Event
