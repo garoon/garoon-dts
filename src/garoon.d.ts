@@ -92,6 +92,4 @@ declare namespace garoon {
             ): HTMLElement | null;
         }
     }
-    namespace message {
-
-    }
+}
