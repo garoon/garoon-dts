@@ -1,0 +1,24 @@
+{
+  "name": "garoon-dts",
+  "version": "0.0.1",
+  "description": "Type definitions for garoon JavaScript customize",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garoon/garoon-dts.git"
+  },
+  "keywords": [
+    "garoon",
+    "TypeScript",
+    "cybozu"
+  ],
+  "author": "Cybozu.inc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/garoon/garoon-dts/issues"
+  },
+  "homepage": "https://github.com/garoon/garoon-dts#readme"
+}
