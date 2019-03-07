@@ -33,7 +33,24 @@ declare namespace garoon {
             >;
         }
     }
-
+    type HttpMethod =
+        | 'GET'
+        | 'POST'
+        | 'PATCH'
+        | 'DELETE'
+        | 'PUT';
+    function api(
+        pathOrUrl: string,
+        method: HttpMethod,
+        params: any,
+        callback: (response: any) => any,
+        errback: (response: string | any) => any
+    ): void;
+    function api(
+        pathOrUrl: string,
+        method: HttpMethod,
+        params: any
+    ): garoon.Promise<any>;
     class Promise<T> {
         constructor(
             callback: (
