@@ -111,4 +111,16 @@ declare namespace garoon {
             ): HTMLElement | null;
         }
     }
+
+    namespace workflow {
+        namespace request {
+            function get(): garoon.types.workflow.ApproveRequest;
+            function set(
+                approveRequest: garoon.types.workflow.ApproveRequest
+            ): void;
+            function getSpaceElement(
+                code: string
+            ): HTMLElement | null;
+        }
+    }
 }
