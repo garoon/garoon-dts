@@ -92,4 +92,23 @@ declare namespace garoon {
             ): HTMLElement | null;
         }
     }
+
+    namespace message {
+        namespace body {
+            interface Recipients {
+                recipients: Recipient[];
+            }
+            interface Recipient {
+                id?: string;
+                type: 'USER';
+                code?: string;
+                name?: string;
+            }
+            function set(recipients: Recipients): void;
+
+            function getItemLastSpaceElement(
+                fieldCode: 'recipients'
+            ): HTMLElement | null;
+        }
+    }
 }
