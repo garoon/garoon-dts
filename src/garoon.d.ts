@@ -70,4 +70,26 @@ declare namespace garoon {
             listOfPromise: Promise<any>[]
         ): Promise<any>;
     }
+
+    namespace schedule {
+        namespace evnet {
+            function get(): garoon.types.schedule.Event;
+            function set(
+                event: garoon.types.schedule.Event
+            ): void;
+            function getHeaderSpaceElement(): HTMLElement | null;
+        }
+        namespace calender {
+            type ViewType =
+                | 'GROUP_DAY'
+                | 'GROUP_WEEK'
+                | 'DAY'
+                | 'WEEK'
+                | 'MONTH';
+            function getDayFirstSpaceElement(
+                viewType: ViewType,
+                date: string
+            ): HTMLElement | null;
+        }
+    }
 }
