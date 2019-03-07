@@ -25,4 +25,49 @@ declare namespace garoon {
             function getRequestToken(): string;
         }
     }
+
+    namespace connect {
+        namespace kintone {
+            function getRequestToken(): garoon.Promise<
+                string
+            >;
+        }
+    }
+    type HttpMethod =
+        | 'GET'
+        | 'POST'
+        | 'PATCH'
+        | 'DELETE'
+        | 'PUT';
+    function api(
+        pathOrUrl: string,
+        method: HttpMethod,
+        params: any,
+        callback: (response: any) => any,
+        errback: (response: string | any) => any
+    ): void;
+    function api(
+        pathOrUrl: string,
+        method: HttpMethod,
+        params: any
+    ): garoon.Promise<any>;
+    class Promise<T> {
+        constructor(
+            callback: (
+                resolve: (resolved: T) => any,
+                reject: (rejected: any) => any
+            ) => void
+        );
+
+        then(callback: (resolved: T) => any): Promise<any>;
+        catch(
+            callback: (rejected: any) => any
+        ): Promise<any>;
+
+        static resolve(resolved: any): Promise<any>;
+        static reject(rejected: any): Promise<any>;
+        static all(
+            listOfPromise: Promise<any>[]
+        ): Promise<any>;
+    }
 }
