@@ -100,14 +100,14 @@ declare namespace garoon {
             }
             interface Recipient {
                 id?: string;
-                type: "USER";
+                type: 'USER';
                 code?: string;
                 name?: string;
             }
             function set(recipients: Recipients): void;
 
             function getItemLastSpaceElement(
-                fieldCode: "recipients"
+                fieldCode: 'recipients'
             ): HTMLElement | null;
         }
     }
