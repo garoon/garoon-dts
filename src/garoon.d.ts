@@ -21,5 +21,8 @@ declare namespace garoon {
                 language: string;
             }
         }
+        namespace request {
+            function getRequestToken(): string;
+        }
     }
 }
