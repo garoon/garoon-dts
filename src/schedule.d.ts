@@ -29,7 +29,6 @@ declare namespace garoon {
                 end: DateTime;
                 originalStartTimeZone: string;
                 originalEndTimeZone: string;
-                watchers: Entity[];
                 facilities: Facility[];
                 facilitiesCandidate: Facility[];
                 facilityUsingPurpose: string;
@@ -62,8 +61,6 @@ declare namespace garoon {
                 attachments: Attachment[];
                 start: DateTime;
                 end: DateTime;
-                isAllDay: boolean;
-                isStartOnly: boolean;
                 originalStartTimeZone: string;
                 originalEndTimeZone: string;
                 facilities: Facility[];
