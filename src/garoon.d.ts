@@ -1,3 +1,6 @@
+/// <reference path='./schedule.d.ts' />
+/// <reference path='./workflow.d.ts' />
+
 declare namespace garoon {
     namespace events {
         function on(
