@@ -1,19 +1,21 @@
 declare namespace garoon {
     namespace types {
         namespace schedule {
-            type Event = RegularEvent | RepeatEvent;
             type Visibility =
                 | 'PUBLIC'
                 | 'PRIVATE'
                 | 'SET_PRIVATE_WATCHERS';
 
-            interface RegularEvent {
+            interface Event {
                 id: string;
                 creator: User;
                 createdAt: string;
                 updater: User;
                 updatedAt: string;
-                eventType: 'REGULAR';
+                eventType:
+                    | 'REGULAR'
+                    | 'REPEATING'
+                    | 'ALL_DAY';
                 eventMenu: string;
                 subject: string;
                 notes: string;
@@ -22,7 +24,7 @@ declare namespace garoon {
                 attendees: Attendee[];
                 attendeesCandidate: Entity[];
                 watchers: Entity[];
-                watchersCondidate: Entity[];
+                watchersCandidate: Entity[];
                 companyInfo: CompanyInfo;
                 attachments: Attachment[];
                 start: DateTime;
@@ -38,38 +40,7 @@ declare namespace garoon {
                 visibilityType: Visibility;
                 additionalItems: AdditionalItems;
                 useAttendanceCheck: boolean;
-            }
-
-            interface RepeatEvent {
-                id: string;
-                creator: User;
-                createdAt: string;
-                updater: User;
-                updatedAt: string;
-                eventType: 'REPEATING';
-                eventMenu: string;
-                subject: string;
-                notes: string;
-                isAllDay: boolean;
-                isStartOnly: boolean;
-                attendees: Attendee[];
-                attendeesCandidate: Entity[];
-                watchers: Entity[];
-                watchersCandidate: [];
-                useAttendanceCheck: boolean;
-                companyInfo: CompanyInfo;
-                attachments: Attachment[];
-                start: DateTime;
-                end: DateTime;
-                originalStartTimeZone: string;
-                originalEndTimeZone: string;
-                facilities: Facility[];
-                facilitiesCandidate: Facility[];
-                facilityReservationInfo: FacilityReservationInfo;
-                facilityUsageRequests: FacilityUsageRequest[];
-                visibilityType: Visibility;
-                repeatInfo: RepeatInfo;
-                additionalItems: AdditionalItems;
+                repeatInfo?: RepeatInfo;
             }
 
             interface RepeatInfo {
