@@ -36,7 +36,6 @@ declare namespace garoon {
                 facilityUsingPurpose: string;
                 facilityReservationInfo: FacilityReservationInfo;
                 facilityUsageRequests: FacilityUsageRequest[];
-                approvedBy: User[];
                 visibilityType: Visibility;
                 additionalItems: AdditionalItems;
                 useAttendanceCheck: boolean;
@@ -151,6 +150,7 @@ declare namespace garoon {
             }
 
             interface FacilityUsageRequest {
+                approvedBy: User[];
                 facility: Facility;
                 status:
                     | 'IN_PROGRESS'
