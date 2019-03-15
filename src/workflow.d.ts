@@ -28,12 +28,14 @@ declare namespace garoon {
 
             interface AvailableOperations {
                 sentBackTargets: '$applicant' | string[];
-                list:
+                list: (
                     | 'SENT_BACK'
                     | 'APPROVE'
                     | 'REJECT'
                     | 'WITHDRAW'
-                    | 'CANCEL'[];
+                    | 'CANCEL'
+                    | 'CONFIRM'
+                    | 'ACKNOWLEDGE')[];
             }
             interface StringValueItem {
                 name: string;
@@ -76,7 +78,7 @@ declare namespace garoon {
 
             interface RouteNaviValueItem {
                 name: string;
-                type: 'DATETIME';
+                type: 'ROUTE_NAVI';
                 value: {
                     route: string;
                     expense: string;
