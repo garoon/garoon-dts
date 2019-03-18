@@ -1,3 +1,6 @@
+/// <reference path='./schedule.d.ts' />
+/// <reference path='./workflow.d.ts' />
+
 declare namespace garoon {
     namespace events {
         function on(
@@ -108,6 +111,18 @@ declare namespace garoon {
 
             function getItemLastSpaceElement(
                 fieldCode: 'recipients'
+            ): HTMLElement | null;
+        }
+    }
+
+    namespace workflow {
+        namespace request {
+            function get(): garoon.types.workflow.ApproveRequest;
+            function set(
+                approveRequest: garoon.types.workflow.ApproveRequest
+            ): void;
+            function getSpaceElement(
+                code: string
             ): HTMLElement | null;
         }
     }
