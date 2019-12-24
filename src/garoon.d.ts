@@ -126,4 +126,10 @@ declare namespace garoon {
             ): HTMLElement | null;
         }
     }
+
+    namespace assets {
+        namespace images {
+            function getUrl(fileKey: string): string;
+        }
+    }
 }
