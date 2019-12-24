@@ -27,6 +27,24 @@ declare namespace garoon {
         namespace request {
             function getRequestToken(): string;
         }
+        namespace proxy {
+            function send(
+                proxyCode: string,
+                url: string,
+                method: HttpMethod,
+                headers: any,
+                data: any,
+                callback: (response: any) => any,
+                error: (response: any) => any
+            ): void;
+            function send(
+                proxyCode: string,
+                url: string,
+                method: HttpMethod,
+                headers: any,
+                data: any
+            ): garoon.Promise<any>;
+        }
     }
 
     namespace connect {
