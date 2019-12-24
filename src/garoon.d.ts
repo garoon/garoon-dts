@@ -3,8 +3,27 @@
 
 declare namespace garoon {
     namespace events {
+        type EventType =
+            | 'schedule.event.create.show'
+            | 'schedule.event.create.submit'
+            | 'schedule.event.edit.show'
+            | 'schedule.event.edit.submit'
+            | 'schedule.event.detail.show'
+            | 'schedule.calendar.groupDayIndex.show'
+            | 'schedule.calendar.groupWeekIndex.show'
+            | 'schedule.calendar.dayIndex.show'
+            | 'schedule.calendar.weekIndex.show'
+            | 'schedule.calendar.monthIndex.show'
+            | 'message.body.create.show'
+            | 'message.body.changeTo.show'
+            | 'workflow.request.create.show'
+            | 'workflow.request.detail.show'
+            | 'workflow.request.approve.show'
+            | 'workflow.request.print.show'
+            | 'workflow.request.approve.submit.success';
+
         function on(
-            event: string | string[],
+            event: EventType | EventType[],
             handler: (event: any) => any
         ): void;
     }
