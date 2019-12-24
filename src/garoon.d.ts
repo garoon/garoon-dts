@@ -76,11 +76,20 @@ declare namespace garoon {
 
     namespace schedule {
         namespace event {
+            type ItemCode =
+                | 'DATE_AND_TIME'
+                | 'ATTENDEES'
+                | 'NOTES';
             function get(): garoon.types.schedule.Event;
             function set(
                 event: garoon.types.schedule.Event
             ): void;
             function getHeaderSpaceElement(): HTMLElement | null;
+            function insertTableRow(
+                label: string,
+                description: string | HTMLElement,
+                item_code?: ItemCode
+            ): void;
         }
         namespace calender {
             type ViewType =
