@@ -124,6 +124,10 @@ declare namespace garoon {
             function getSpaceElement(
                 code: string
             ): HTMLElement | null;
+            function setItemEditable(
+                itemCode: string | string[],
+                status: boolean
+            ): void;
         }
     }
 }
